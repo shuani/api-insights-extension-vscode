@@ -1,0 +1,12 @@
+**/.DS_Store
+out
+dist
+node_modules
+workspace.code-workspace
+**/__pycache__
+Pipfile.lock
+**/*.log
+vscolors.css
+*.vsix
+__vscode-vars.css
+coverage
