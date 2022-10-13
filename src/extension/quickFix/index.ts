@@ -18,7 +18,6 @@
 
 import * as InclusiveLanguage from './inclusive-language';
 import * as Oas2HttpsOnly from './oas2-https-only';
-import * as StatusCode40x from './status-code-40x';
 import { Fix } from './interface';
 
 const fixsMap = new Map<string, Fix[]>();
@@ -36,8 +35,5 @@ export function getFixs(key: string) {
 
 for (let i = 0; i < InclusiveLanguage.NAMES.length; i += 1) {
   addFix(InclusiveLanguage.NAMES[i], InclusiveLanguage.fixs[i]);
-}
-for (let i = 0; i < StatusCode40x.NAMES.length; i += 1) {
-  addFix(StatusCode40x.NAMES[i], StatusCode40x.fixs[i]);
 }
 addFix(Oas2HttpsOnly.NAME, Oas2HttpsOnly.fixs);
