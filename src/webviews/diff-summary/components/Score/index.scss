@@ -1,0 +1,84 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.diff-summary_score{
+    
+    display: inline-flex;
+    &_left{
+        margin-right:12px;
+        width:40px;
+    }
+    &_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &_title{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 19px;
+            color: #CCCCCC;
+            text-align: left;
+        }
+
+        &_update{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #606060;
+            text-align: left;
+        }
+    }
+
+    .__score {
+        border-radius: 11px;
+    }
+}
+
+.CircularProgressbar {
+    --score-text-color: #fff;
+    --color: #ccc;
+    .vscode-light & {
+        --score-text-color: #292929;
+    }
+    .CircularProgressbar-trail {
+        stroke: #454545;
+        .vscode-light & {
+            stroke: #f0f0f0;
+        }
+    }
+    .CircularProgressbar-text {
+        fill: var(--score-text-color);
+        text-anchor: middle;
+        dominant-baseline: central;
+    }
+    .l0 & .CircularProgressbar-path {
+        stroke: var(--score-l0-color);
+    }
+    .l1 & .CircularProgressbar-path {
+        stroke: var(--score-l1-color);
+    }
+    .l2 & .CircularProgressbar-path {
+        stroke: var(--score-l2-color);
+    }
+    .l3 & .CircularProgressbar-path {
+        stroke: var(--score-l3-color);
+    }
+    .l4 & .CircularProgressbar-path {
+        stroke: var(--score-l4-color);
+    }
+}

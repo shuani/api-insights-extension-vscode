@@ -1,0 +1,232 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "../common.scss";
+
+html,
+body {
+    overflow: hidden auto;
+}
+.vscode-dark {
+    background-color: #252526;
+    .logo-light {
+        display: none;
+    }
+}
+.vscode-light {
+    background-color: #f0f0f0;
+}
+.vscode-light .logo-dark {
+    display: none;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        padding: 8px 20px;
+    }
+}
+.cfg-not-ready {
+    color: var(--vscode-foreground);
+    padding: 16px;
+    background-color: var(--vscode-notifications-border);
+    .vscode-dark {
+        & {
+            background-color: var(--vscode-terminal-ansiWhite);
+        }
+    }
+    margin: 20px 20px 0;
+    border-radius: 4px;
+    line-height: 18px;
+
+    > .__title {
+        font-weight: bold;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        .codicon-report {
+            margin-right: 5px;
+        }
+    }
+    > .__content {
+        font-weight: 400;
+    }
+    .__actions {
+        display: flex;
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        vscode-button {
+            margin: 14px 0 18px;
+            width: 100%;
+        }
+        vscode-link {
+            color: #007acc;
+        }
+    }
+}
+
+.__filter {
+    .filter-input {
+        &::part(root) {
+            height: 28px;
+        }
+        .anticon.anticon-close-circle {
+            position: absolute;
+            right: 10px;
+            z-index: 1;
+            top: 9px;
+            height: 14px;
+            width: 14px;
+            color: #606060;
+        }
+    }
+}
+.api-service-list {
+    .__list {
+        .ant-collapse {
+            margin-top: 20px;
+            border: none;
+            background-color: transparent;
+            --bg: #3c3c3c;
+            .vscode-light & {
+                --bg: #fff;
+            }
+
+            &-content-box {
+                padding: 12px;
+                padding-top: 0;
+            }
+            &-content {
+                background-color: var(--bg);
+                color: #ccc;
+                .vscode-light & {
+                    color: #292929;
+                    background-color: var(--bg);
+                }
+            }
+            > .ant-collapse-item {
+                margin-top: 16px;
+                border-bottom-color: transparent;
+                background-color: var(--bg);
+                border-radius: 4px;
+                // border-color: transparent;
+                // .vscode-light & {
+                //     border-color: transparent;
+                // }
+                > .ant-collapse-header {
+                    .vscode-dark & {
+                        color: #ccc;
+                    }
+                    border-radius: 4px;
+                    padding: 12px 0 12px 12px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    &:hover {
+                        background-color: #454545;
+                        color: #fff;
+                        .vscode-light & {
+                            color: inherit;
+                            box-shadow: 0px 10px 24px rgb(0 0 0 / 12%);
+                            background: #fff;
+                        }
+                    }
+                    .ant-collapse-arrow {
+                        margin-right: 4px;
+                    }
+                    .ant-collapse-expand-icon {
+                        color: #808080;
+                    }
+                }
+                &.ant-collapse-item-active > .ant-collapse-header:hover {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+        }
+    }
+    .__list-item {
+        // background: var(--vscode-notificationCenterHeader-background);
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 6px 8px 16px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        &:hover,
+        &.active {
+            // font-weight: 700;
+            background-color: #007acc;
+            color: #fff;
+            .vscode-light & {
+                .__list-item-score {
+                    color: #fff;
+                }
+            }
+        }
+        &.active {
+            background-color: #264f78;
+        }
+
+        &-score {
+            color: #ccc;
+            .vscode-light & {
+                color: #606060;
+            }
+            .ant-badge-count {
+                box-shadow: none;
+                background-color: #f0f0f0;
+                .vscode-light & {
+                    color: #292929;
+                }
+                .vscode-dark & {
+                    background-color: #303031;
+                }
+            }
+
+            .vscode-dark & {
+                &.l0 .ant-badge-count {
+                    color: var(--score-l0-color);
+                }
+                &.l1 .ant-badge-count {
+                    color: var(--score-l1-color);
+                }
+                &.l2 .ant-badge-count {
+                    color: var(--score-l2-color);
+                }
+                &.l3 .ant-badge-count {
+                    color: var(--score-l3-color);
+                }
+                &.l4 .ant-badge-count {
+                    color: var(--score-l4-color);
+                }
+            }
+        }
+    }
+}
+
+*::-webkit-scrollbar {
+    /*      display: none; */
+    width: 2px;
+    height: 2px;
+}

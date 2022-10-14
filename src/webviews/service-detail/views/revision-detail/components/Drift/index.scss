@@ -1,0 +1,156 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+.vscode-light {
+    .spec-list_actions_content > li:hover {
+        color: #fff;
+    }
+}
+.list_header {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--vscode-foreground);
+}
+
+.spec-diff-type_column {
+    .ant-table-filter-column {
+        align-items: center;
+        &::after {
+            content: attr(data-filter-num);
+            display: block;
+            width: 14px;
+            line-height: 12px;
+            border-radius: 11px;
+            background-color: #606060;
+            color: var(--vscode-foreground);
+            font-size: 9px;
+            text-align: center;
+            margin-left: 5px;
+        }
+    }
+}
+
+.spec-list {
+    &_actions {
+        ul {
+            list-style: none !important;
+            margin-bottom: 0;
+        }
+
+        &_btn {
+            cursor: pointer;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            .codicon {
+                margin-left: -10px;
+            }
+            &:hover {
+                .anticon-more,
+                .codicon {
+                    color: var(--vscode-textLink-activeForeground);
+                }
+            }
+        }
+
+        &_content {
+            margin-bottom: 0 !important;
+            display: flex;
+            margin-left: -5px;
+            & > li {
+                list-style: none;
+                display: flex;
+                & > span {
+                    display: block;
+                    align-items: center;
+                    border-radius: 4px;
+                    padding: 4px;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #303031;
+                        border-color: #333333;
+                        color: var(--vscode-textLink-activeForeground);
+                    }
+                }
+            }
+        }
+
+        &_wrap {
+            .anticon-more {
+                cursor: pointer;
+                &:hover {
+                    color: var(--vscode-textLink-activeForeground);
+                }
+            }
+        }
+        .ant-popover-inner-content {
+            padding: 8px;
+        }
+        .ant-popover-arrow-content {
+            &:before {
+                background: #454545;
+            }
+        }
+
+        .ant-popover-inner {
+            background-color: #454545;
+        }
+
+        .ant-checkbox-inner {
+            border-width: 2px;
+        }
+    }
+}
+
+.diff-type {
+    cursor: pointer;
+    display: flex;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &_General {
+        color: var(--spec-diff-warn);
+        &::before {
+            background-image: url("./image/General.svg");
+        }
+    }
+
+    &_Shadow {
+        color: var(--spec-diff-error);
+        &::before {
+            background-image: url("./image/Shadow.svg");
+        }
+    }
+
+    &_Zombie {
+        color: var(--spec-diff-error);
+        &::before {
+            background-image: url("./image/Shadow.svg");
+        }
+    }
+}

@@ -1,0 +1,79 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+.service-detail {
+    &_container {
+        padding: 20px 24px 0;
+
+        & > header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .ant-tabs-content {
+            flex-grow: 1;
+            height: 100%;
+        }
+
+        .ant-tabs > .ant-tabs-nav {
+            margin-left: -24px;
+            margin-right: -24px;
+            padding-left: 24px;
+        }
+
+        .service-header {
+            font-weight: 350;
+            .__detail {
+                .ant-dropdown-trigger {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                .__version {
+                    margin-left: 0;
+                }
+                .__revision {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.service {
+    &-name {
+        // color: var(--vscode-foreground);
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+    &-edit {
+    }
+}
+
+.vscode-light {
+    .ant-table-filter-column {
+        &::after {
+            color: #fff;
+        }
+    }
+}
