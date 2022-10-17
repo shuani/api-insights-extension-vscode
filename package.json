@@ -302,7 +302,7 @@
     "yaml": "^2.1.0"
   },
   "dependencies": {
-    "@cisco-developer/api-insights-openapi-rulesets": "0.0.5",
+    "@cisco-developer/api-insights-openapi-rulesets": "0.0.9",
     "@coliu19/ruleset-demo": "^0.0.25",
     "@reduxjs/toolkit": "^1.8.2",
     "@stoplight/json": "^3.20.1",

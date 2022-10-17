@@ -42,20 +42,21 @@ If there is an API Insights remote service available, API Insights extension for
 ## Development
 
 1. Clone the repository and install dependencies
-~~~ bash
-git clone https://github.com/cisco-developer/api-insights-extension-vscode
-cd api-insights-extension-vscode
-npm i
-~~~
+    ~~~ bash
+    git clone https://github.com/cisco-developer/api-insights-extension-vscode
+    cd api-insights-extension-vscode
+    npm i
+    ~~~
 2. Open api-insights-extension-vscode folder in Visual Studio Code
 3. Click 'Start Debugging' or 'Run Without Debugging' from Run menu
 4. API Insights Extension for Visual Studio Code now runs in local mode, continue to setup an API Insights local instance to switch to connected mode:
-~~~ bash
-git clone https://github.com/cisco-developer/api-insights
-cd api-insights
-docker-compose up
-~~~
+    ~~~ bash
+    git clone https://github.com/cisco-developer/api-insights
+    cd api-insights
+    docker-compose up
+    ~~~
 5. Now API Insights service is running at http://0.0.0.0:8081, open Settings in Visual Studio Code, set API Insights Endpoint URL to http://0.0.0.0:8081/v1/apiregistry/. For more information, please refer to [API Insights](https://github.com/cisco-developer/api-insights).
+6. For more information, please refer to [API Insights Official Documentation](https://developer.cisco.com/docs/api-insights/#!using-the-api-insights-visual-studio-code-extension)
 
 ## Feedback
 
