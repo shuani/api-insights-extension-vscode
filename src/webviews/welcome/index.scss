@@ -1,0 +1,312 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "../common.scss";
+
+html,
+body {
+    overflow: hidden auto;
+}
+.vscode-dark {
+    .ant-card {
+        background-color: transparent;
+    }
+
+    .ant-notification-notice {
+        background: #292929;
+    }
+}
+
+.vscode-light {
+    background-color: #f0f0f0;
+}
+.vscode-light,
+.vscode-dark {
+    .ant-notification-notice-close {
+        top: 8px;
+    }
+    .ant-notification-notice-message {
+        margin-bottom: 0;
+    }
+
+    .ant-notification-notice {
+        width: auto;
+        padding: 8px 24px;
+    }
+
+    .ant-notification-notice-closable .ant-notification-notice-message {
+        padding-right: 50px;
+        color: #cccccc;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.welcome-page {
+    --block-bg: #252526;
+    --main-color: #ccc;
+    padding: 24px 24px 0;
+    .vscode-light & {
+        --block-bg: #fff;
+        --main-color: #292929;
+        color: #292929;
+    }
+    color: var(--main-color);
+    h1 {
+        font-size: 26px;
+        line-height: 35px;
+        margin-bottom: 0;
+        padding: 0;
+        font-weight: 850;
+        color: inherit;
+    }
+
+    ._desc {
+        font-weight: 400;
+        font-size: 13px;
+        .vscode-light & {
+            color: #606060;
+        }
+    }
+
+    .ant-card {
+        border-radius: 6px;
+        background: var(--block-bg);
+    }
+    .ant-card-body {
+        padding: 16px;
+    }
+
+    .ant-card-head {
+        .vscode-dark &,
+        .basic-features & {
+            border-color: transparent;
+        }
+        padding: 0 16px 12px;
+        min-height: 0;
+        .ant-card-extra{
+            padding-bottom: 0;
+        }
+        .ant-card-head-title {
+            padding-bottom: 0;
+            font-weight: 850;
+            font-size: 15px;
+            line-height: 20px;
+            white-space: inherit;
+        }
+    }
+
+    .basic-features {
+        margin-top: 24px;
+
+        ._tips {
+            display: flex;
+            align-items: center;
+            background: #303031;
+            padding: 13px 16px;
+            border-radius: 6px;
+            .vscode-light & {
+                background-color: #fff;
+                border: 1px solid #e7e7e7;
+            }
+            .__icon {
+                /* width: 48px; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i.codicon.codicon-pass-filled {
+                    font-size: 40px;
+                    padding-right: 12px;
+                    color: #40c8ae;
+                }
+            }
+
+            .__main {
+                .___title {
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+
+                .___desc {
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #606060;
+                }
+            }
+        }
+    }
+    .unlock-more-features {
+        margin-top: 16px;
+        .title-container {
+            .__title {
+                .vscode-dark {
+                    color: #fff;
+                }
+            }
+            .__desc {
+                font-weight: 400;
+                font-size: 13px;
+                i {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .features-main {
+        display: flex;
+        color: #606060;
+    }
+
+    .feature-list-item {
+        padding: 12px 16px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        border: 1px solid #303031;
+        > .-icon {
+            width: 40px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            i {
+                font-size: 16px;
+                margin-left: 2px;
+            }
+            .CircularProgressbar-trail {
+                stroke: transparent;
+            }
+            .CircularProgressbar-path {
+                stroke: #292929;
+            }
+            // .CircularProgressbar-text {
+            //     fill: yellow;
+            // }
+            // .CircularProgressbar-background {
+            //     fill: green;
+            // }
+        }
+        margin-bottom: 12px;
+        border-radius: 6px;
+        .-title {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .-desc {
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .vscode-dark &:hover {
+            color: #ccc;
+            background: #303031;
+            > .-icon {
+                i {
+                    color: #606060;
+                }
+                .CircularProgressbar-path {
+                    stroke: #3c3c3c;
+                }
+            }
+        }
+        .vscode-dark &.active {
+            background: #454545;
+            color: #ccc;
+            border-color: transparent;
+
+            .-title {
+                color: #fff;
+            }
+            > .-icon {
+                i {
+                    color: #fff;
+                }
+                .CircularProgressbar-path {
+                    stroke: #fff;
+                }
+            }
+        }
+        .vscode-light & {
+            border-color: #f0f0f0;
+            background-color: #f0f0f0;
+            color: #808080;
+
+            > .-icon {
+                i {
+                    color: #292929;
+                }
+                .CircularProgressbar-path {
+                    stroke: #ccc;
+                }
+            }
+        }
+        .vscode-light &:hover {
+            border-color: #ccc;
+            background: #fff;
+            color: #292929;
+        }
+        .vscode-light &.active {
+            background: #fff;
+            border-color: #ccc;
+            color: #292929;
+            > .-icon {
+                .CircularProgressbar-path {
+                    stroke: #292929;
+                }
+            }
+        }
+    }
+    .feature-preview {
+        width: 50%;
+        flex-shrink: 0;
+        background: #303031;
+        // border-radius: 6px;
+        margin-left: 12px;
+        margin-bottom: 12px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        .vscode-light & {
+            background-color: #f0f0f0;
+        }
+        &.active-0 {
+            background-image: url("./images/feature-1.svg");
+        }
+        &.active-1 {
+            background-image: url("./images/feature-2.svg");
+        }
+        &.active-2 {
+            background-image: url("./images/feature-3.svg");
+        }
+        &.active-3 {
+            background-image: url("./images/feature-4.svg");
+        }
+        // &.active-1 {
+        //     background-image: url("./images/feature-2.png");
+        // }
+        // &.active-2 {
+        //     background-image: url("./images/feature-3.png");
+        // }
+        // &.active-3 {
+        //     background-image: url("./images/feature-4.png");
+        // }
+    }
+}

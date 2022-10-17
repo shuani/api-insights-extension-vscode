@@ -1,0 +1,293 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.vscode-light {
+    @import "~antd/dist/antd.min";
+}
+.vscode-dark {
+    @import "~antd/dist/antd.dark.min";
+}
+@import "./tailwind.dist";
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+:root {
+    --score-l0-color: #7adf2d;
+    --score-l1-color: #8de548;
+    --score-l2-color: #bfd85c;
+    --score-l3-color: #f4e345;
+    --score-l4-color: #d7b731;
+    --severity-error: #eb5757;
+    --severity-hint: #c3c9d2;
+    --compliance-light-severity-hint: #606060;
+    --severity-info: #00bceb;
+    --severity-warning: #f0ad42;
+    --compliance-affected-blue: #007acc;
+}
+
+vscode-text-field::part(root),
+vscode-button {
+    border-radius: 4px;
+    .anticon {
+        margin-right: 4px;
+    }
+}
+
+.ant-empty-normal {
+    .ant-empty-image {
+        height: 22px;
+        & > svg {
+            display: none;
+        }
+        background: no-repeat center;
+        background-size: contain;
+    }
+}
+.vscode-light {
+    vscode-button {
+        &.btn-vscode-light-primary {
+            background-color: var(--button-primary-background) !important;
+            color: var(--button-primary-foreground) !important;
+            outline: none !important;
+            border-color: #fff !important;
+        }
+
+        &[appearance="secondary"] {
+            border: 1px solid #cccccc;
+            background-color: #fff;
+            color: #292929;
+            &:active::part(control) {
+                background-color: #fff;
+                height: auto;
+            }
+            &:hover {
+                border-color: #1890ff;
+                color: #1890ff;
+            }
+        }
+    }
+
+    vscode-text-field::part(root):focus,
+    vscode-text-field:focus-within::part(root) {
+        border-color: #606060;
+    }
+
+    .ant-empty-normal {
+        .ant-empty-image {
+            background-image: url("../images/empty-light.svg");
+        }
+    }
+}
+
+.vscode-dark {
+    .ant-table-filter-trigger {
+        color: var(--table-header-word);
+    }
+    .ant-table-filter-dropdown-btns {
+        background-color: var(--api-list-filter-bg);
+        border-top: 1px solid var(--vscode-dropdown-border);
+    }
+
+    .ant-table-filter-trigger:hover {
+        background-color: transparent;
+    }
+
+    .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+    .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+        color: var(--vscode-textLink-foreground);
+    }
+    .ant-table-tbody > tr.ant-table-placeholder:hover > td {
+        background: transparent;
+    }
+
+    .ant-empty-normal {
+        .ant-empty-image {
+            // height: 22px;
+            background-image: url("../images/empty-dark.svg");
+        }
+        color: var(--vscode-foreground);
+    }
+    .ant-tabs-top > .ant-tabs-nav::before {
+        border-color: var(--vscode-editorWidget-border);
+    }
+
+    .ant-tabs {
+        color: var(--vscode-foreground);
+    }
+
+    .ant-pagination-item a {
+        color: var(--vscode-foreground);
+    }
+
+    .ant-pagination-item-active {
+        background: transparent;
+    }
+
+    .ant-pagination-disabled .ant-pagination-item-link {
+        color: var(--vscode-foreground);
+    }
+
+    .ant-pagination-prev button,
+    .ant-pagination-next button {
+        color: var(--vscode-foreground);
+    }
+
+    .ant-btn-link[disabled] {
+        background-color: var(--api-list-hover-bg);
+        color: #fff;
+    }
+
+    .ant-dropdown-menu {
+        background-color: var(--api-list-filter-bg);
+        &.ant-dropdown-menu-submenu-popup {
+            background-color: transparent;
+        }
+        &-item {
+            color: var(--vscode-foreground);
+            &:hover {
+                background-color: var(--api-list-hover-bg);
+            }
+        }
+    }
+
+    .ant-table-filter-dropdown {
+        background-color: var(--api-list-filter-bg);
+    }
+
+    .ant-dropdown-menu-item-selected {
+        background-color: transparent;
+    }
+
+    .ant-table-filter-trigger {
+        &:hover {
+            color: var(--vscode-inputValidation-infoBorder);
+        }
+    }
+    .ant-table {
+        background-color: transparent;
+        color: var(--table-word);
+        font-weight: 400;
+    }
+
+    .ant-table-thead > tr > th {
+        color: var(--table-header-word);
+        background: transparent;
+        font-weight: 500;
+        border-bottom: 2px solid var(--vscode-editorWidget-border);
+    }
+
+    .ant-table.ant-table-bordered > .ant-table-container {
+        border-left: 1px solid var(--vscode-editorWidget-border);
+        & > .ant-table-content > table {
+            border-top: 1px solid var(--vscode-editorWidget-border);
+            & > thead > tr > th {
+                border-right: 1px solid var(--vscode-editorWidget-border);
+            }
+
+            & > tbody > tr > td {
+                border-right: 1px solid var(--vscode-editorWidget-border);
+            }
+        }
+    }
+
+    .ant-table-tbody > tr > td {
+        border-bottom: 1px solid var(--vscode-editorWidget-border);
+    }
+
+    .ant-table-tbody > tr.ant-table-row:hover > td,
+    .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+        background: var(--api-list-hover-bg);
+    }
+
+    .ant-table.ant-table-bordered > .ant-table-title {
+        border-color: var(--vscode-editorWidget-border);
+    }
+    .ant-btn {
+        &:hover {
+            color: var(--vscode-foreground);
+            background-color: var(--vscode-notificationCenterHeader-background);
+            border-color: transparent;
+        }
+    }
+}
+
+vscode-data-grid {
+    border: 1px solid var(--vscode-input-background);
+}
+vscode-data-grid-row {
+    &.header vscode-data-grid-cell {
+        text-transform: capitalize;
+        color: #606060;
+        font-weight: 500;
+    }
+    vscode-data-grid-cell {
+        color: var(--vscode-foreground);
+        padding: 13px;
+        &:focus {
+            outline: none !important;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--vscode-input-background);
+    }
+}
+
+.ant-btn .anticon-more.rotate-90 {
+    transform: rotate(90deg);
+}
+button.ant-modal-close {
+    width: auto;
+}
+
+vscode-button vscode-progress-ring {
+    width: 13px;
+    height: 100%;
+    margin-left: 5px;
+    margin-top: 1px;
+    &::part(indeterminate-indicator-1) {
+        stroke: var(--vscode-button-foreground);
+    }
+}
+body {
+    background-color: var(--vscode-editor-background);
+    color: var(--vscode-foreground);
+}
+
+.vscode-dark,
+.vscode-light {
+    .ant-dropdown-menu-item-selected,
+    .ant-dropdown-menu-submenu-title-selected,
+    .ant-dropdown-menu-item.ant-dropdown-menu-item-active,
+    .ant-dropdown-menu-item.ant-dropdown-menu-submenu-title-active,
+    .ant-dropdown-menu-item:hover,
+    .ant-dropdown-menu-submenu-title.ant-dropdown-menu-item-active,
+    .ant-dropdown-menu-submenu-title.ant-dropdown-menu-submenu-title-active,
+    .ant-dropdown-menu-submenu-title:hover {
+        color: #fff;
+        background: #0e639c;
+    }
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke-linecap: initial;
+}

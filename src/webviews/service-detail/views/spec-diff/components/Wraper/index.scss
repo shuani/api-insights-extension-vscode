@@ -1,0 +1,155 @@
+/**
+ * Copyright 2022 Cisco Systems, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+.spec-diff {
+    min-height: 100vh;
+    background-color: var(--vscode-editor-background);
+    transition: all 500ms;
+    animation: move 500ms;
+
+    @keyframes move {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+    .ant-tabs-tab {
+        padding: 8px 0;
+    }
+    .ant-tabs {
+        overflow: visible;
+    }
+    &_header {
+        &_wapper {
+            padding-left: 20px;
+            padding-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            & h1 {
+                font-size: 26px;
+                color: var(--vscode-foreground);
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                .anticon {
+                    font-size: 0.7em;
+                    padding: 2px;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    color: #606060;
+                    margin-right: 5px;
+                    vertical-align: baseline;
+                    &:hover {
+                        color: var(--vscode-foreground);
+                        background-color: var(--vscode-notificationCenterHeader-background);
+                    }
+                }
+            }
+        }
+
+        &_right {
+            .ant-checkbox-wrapper {
+                margin-top: 10px;
+            }
+            vscode-button {
+                margin-right: 12px;
+                .codicon {
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        &_time {
+            font-size: 12px;
+            color: #606060;
+            margin-left: 26px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &_content {
+        &_wapper {
+            padding: 0 20px 20px 20px;
+            position: relative;
+            .ant-tabs {
+                overflow: initial !important;
+            }
+            .ant-checkbox-wrapper {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+            }
+        }
+    }
+    &_title {
+        font-size: 12px;
+        color: var(--vscode-foreground);
+        margin-bottom: 12px;
+    }
+    
+    &_summary {
+        &_wapper {
+            padding: 10px 20px;
+        }
+        &_title {
+            font-size: 12px;
+            color: var(--vscode-foreground);
+            margin-bottom: 12px;
+        }
+
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            & > li:first-child {
+                border-right: 1px solid var(--vscode-editor-background);
+                border-bottom: 1px solid var(--vscode-editor-background);
+            }
+            & > li:nth-child(2) {
+                border-bottom: 1px solid var(--vscode-editor-background);
+            }
+            & > li:nth-child(3) {
+                border-right: 1px solid var(--vscode-editor-background);
+            }
+
+            & > li {
+                width: 50%;
+                padding-left: 20px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: var(--vscode-editorWidget-background);
+                & > h3 {
+                    color: #808080;
+                    font-size: 12px;
+                    margin: 0;
+                }
+
+                & > p {
+                    color: var(--vscode-foreground);
+                    font-size: 12px;
+                    margin: 0;
+                    padding: 0;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}
