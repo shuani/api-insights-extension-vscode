@@ -16,9 +16,9 @@
 
 ### Installation
 1. Download and install official Microsoft Visual Studio Code
-2. Open VSCode Package Manager
+2. Click the **Extensions** button at left sidebar.
 3. Search for the official API Insights extension
-3. Install [API Insights Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=CiscoDeveloper.api-insights)
+4. Install [API Insights Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=CiscoDeveloper.api-insights)
 
 
 ### Configuration
@@ -55,8 +55,7 @@ If there is an API Insights remote service available, API Insights extension for
     cd api-insights
     docker-compose up
     ~~~
-5. Now API Insights service is running at http://0.0.0.0:8081, open Settings in Visual Studio Code, set API Insights Endpoint URL to http://0.0.0.0:8081/v1/apiregistry/. For more information, please refer to [API Insights](https://github.com/cisco-developer/api-insights).
-6. For more information, please refer to [API Insights Official Documentation](https://developer.cisco.com/docs/api-insights/#!using-the-api-insights-visual-studio-code-extension)
+5. Now API Insights service is running at http://localhost:8081, open Settings in Visual Studio Code, set API Insights Endpoint URL to http://localhost:8081/v1/apiregistry/. For more information, please refer to [API Insights](https://github.com/cisco-developer/api-insights) and [API Insights Official Documentation](https://developer.cisco.com/docs/api-insights/#!using-the-api-insights-visual-studio-code-extension)
 
 ## Feedback
 
