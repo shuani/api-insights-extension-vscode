@@ -147,7 +147,7 @@
             "order": 0,
             "type": "string",
             "default": "",
-            "markdownDescription": "API Insights service endpoint URL, by specifying the 'https' scheme, e.g., https://0.0.0.0:8081/v1/apiregistry/",
+            "markdownDescription": "API Insights service endpoint URL, by specifying the 'https' scheme, e.g., http://localhost:8081/v1/apiregistry/",
             "patternErrorMessage": "Specify the schema http:// or https://",
             "readOnly": true
           },
