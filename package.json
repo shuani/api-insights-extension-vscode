@@ -23,7 +23,7 @@
     "openapi"
   ],
   "activationEvents": [
-    "*",
+    "onStartupFinished",
     "onFileSystem:API-Insights-readonly",
     "onView:api-insights-sidebar",
     "onView:api-insights-diff-summary",
