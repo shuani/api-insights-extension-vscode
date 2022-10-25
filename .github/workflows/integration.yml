@@ -1,0 +1,48 @@
+name: Integration
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+
+      - run: npm install
+
+      - name: Get Short GitHub SHA
+        uses: benjlevesque/short-sha@v2.0
+        id: short-sha
+
+      - name: Build vsix
+        run: npx vsce package -o api-insights-vscode-${{ steps.short-sha.outputs.sha }}.vsix
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: "*.vsix"
+
+  integration:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v3
+
+      - name: Get Short GitHub SHA
+        uses: benjlevesque/short-sha@v2.0
+        id: short-sha
+
+      - name: Upload to AWS S3
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          destination_dir: ${{ secrets.AWS_FOLDER }}
+          source_dir: ./artifact/
