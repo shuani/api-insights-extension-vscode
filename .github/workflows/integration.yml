@@ -17,9 +17,11 @@ jobs:
 
       - run: npm install
 
-      - name: Get Short GitHub SHA
-        uses: benjlevesque/short-sha@v2.0
+      - name: Set Short GitHub SHA
         id: short-sha
+        run: |
+          shortSHA=$(git rev-parse --short ${{ github.sha }})
+          echo "::set-output name=sha::$shortSHA"
 
       - name: Build vsix
         run: npx vsce package -o api-insights-vscode-${{ steps.short-sha.outputs.sha }}.vsix
@@ -33,10 +35,6 @@ jobs:
     needs: build
     steps:
       - uses: actions/download-artifact@v3
-
-      - name: Get Short GitHub SHA
-        uses: benjlevesque/short-sha@v2.0
-        id: short-sha
 
       - name: Upload to AWS S3
         uses: shallwefootball/s3-upload-action@master
