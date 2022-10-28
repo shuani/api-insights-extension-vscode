@@ -17,14 +17,15 @@ jobs:
 
       - run: npm install
 
-      - name: Set Short GitHub SHA
-        id: short-sha
+      - name: Set Version
+        id: version
         run: |
+          packageVersion=$(npx -c 'echo "$npm_package_version"')
           shortSHA=$(git rev-parse --short ${{ github.sha }})
-          echo "::set-output name=sha::$shortSHA"
+          echo "::set-output name=version::$packageVersion-$shortSHA"
 
       - name: Build vsix
-        run: npx vsce package -o api-insights-vscode-${{ steps.short-sha.outputs.sha }}.vsix
+        run: npx vsce package ${{ steps.version.outputs.version }} --no-git-tag-version -o api-insights-vscode-${{ steps.version.outputs.version }}.vsix
 
       - uses: actions/upload-artifact@v3
         with:
