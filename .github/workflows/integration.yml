@@ -22,7 +22,7 @@ jobs:
         run: |
           packageVersion=$(npx -c 'echo "$npm_package_version"')
           shortSHA=$(git rev-parse --short ${{ github.sha }})
-          echo "::set-output name=version::$packageVersion-$shortSHA"
+          echo "version=$packageVersion-$shortSHA" >> $GITHUB_OUTPUT
 
       - name: Build vsix
         run: npx vsce package ${{ steps.version.outputs.version }} --no-git-tag-version -o api-insights-vscode-${{ steps.version.outputs.version }}.vsix

@@ -17,7 +17,7 @@ jobs:
         run: |
           raw=$(git branch -r --contains ${{ github.ref }})
           branch=${raw##*/}
-          echo "::set-output name=branch::$branch"
+          echo "branch=$branch" >> $GITHUB_OUTPUT
           echo "Current Branch is $branch."
     outputs:
       branch: ${{ steps.check_branch.outputs.branch }}
