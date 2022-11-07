@@ -111,6 +111,7 @@ function BaseComponent() {
       setIsLoading(false);
     }).catch((r) => {
       console.error('get service list/org error', r);
+      setIsLoading(false);
       setApiError(true);
     });
     return promise;

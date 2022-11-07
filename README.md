@@ -4,13 +4,13 @@
 
 ## Enhanced Productivity and Developer Experience
 
-*	API Insights validates and scores API specifications against an organization’s guidelines on dimensions such as documentation completeness, API guidelines adherence, inclusive language, and runtime drift. This allows you to track and improve API quality consistently and efficiency.
+* API Insights validates and scores API specifications against an organization’s guidelines on dimensions such as documentation completeness, API guidelines adherence, inclusive language, and runtime drift. This allows you to track and improve API quality consistently and efficiency.
 
-*	Developers can use API Insights through its own dashboard interface, VS Code extension, local CLI, or as part of their GitHub CI/CD pipeline.
+* Developers can use API Insights through its own dashboard interface, VS Code extension, local CLI, or as part of their GitHub CI/CD pipeline.
 
-*	The CI/CD and VS Code extension capabilities of API Insights allow developers to Shift Left, allowing them to resolve spec issues early in the development cycle.
+* The CI/CD and VS Code extension capabilities of API Insights allow developers to Shift Left, allowing them to resolve spec issues early in the development cycle.
 
-*	Leveraging API Insights as part of the code development process allows developers to detect and fix breaking changes, which significantly improves developer experience. The API Insights extension allows you to proactively detect and resolve issues within your local IDE.
+* Leveraging API Insights as part of the code development process allows developers to detect and fix breaking changes, which significantly improves developer experience. The API Insights extension allows you to proactively detect and resolve issues within your local IDE.
 
 ## Get Started
 
