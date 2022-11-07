@@ -156,12 +156,13 @@ function startAPIInsights(context: ExtensionContext) {
           sidebarProvider.view?.webview,
           cfg,
         );
-        postConfigurationChangeMsgToWebview(
-          APIServicePanelProvider.currentPanel?.panel?.webview,
-          cfg,
-        );
       }
     }
+
+    postConfigurationChangeMsgToWebview(
+      APIServicePanelProvider.currentPanel?.panel?.webview,
+      cfg,
+    );
   });
 }
 
