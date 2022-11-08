@@ -12,7 +12,8 @@
     "url": "https://github.com/cisco-developer/api-insights-extension-vscode"
   },
   "engines": {
-    "vscode": "^1.61.0"
+    "vscode": "^1.61.0",
+    "node": ">12 <16"
   },
   "categories": [
     "Linters"
