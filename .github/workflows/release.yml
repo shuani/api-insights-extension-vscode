@@ -49,12 +49,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
 
-      - name: Release to GitHub
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./artifact/api-insights-vscode-${{ github.ref_name }}.vsix
-          generate_release_notes: true
-
       - name: Release to VSCode Marketplace
         run: npx vsce publish --packagePath $(find . -iname *.vsix)
         env:
